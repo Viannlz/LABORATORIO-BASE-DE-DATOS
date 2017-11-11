@@ -1,0 +1,50 @@
+# LabBaseDatos
+USE Ro
+GO
+select * from Producto
+insert into Producto (ID_Producto, nombre, precio, tipo) values (newid(), 'Tutsipop', 3.00, 'Paletas')
+insert into Producto (ID_Producto, nombre, precio, tipo) values (newid(),'Trident', 5.00, 'Chicles')
+insert into Producto (ID_Producto, nombre, precio, tipo) values (newid(), 'Gomilocas', 8.00, 'Gomas')
+insert into Producto values (newid(), 'Nerds', 12.90, 'Dulce')
+insert into Producto values (newid(), 'Bubulubu', 12.00, 'Malvavisco')
+insert into Producto values (newid(), 'Rockaleta', 9.00, 'Dulces')
+
+select * from Sucursales
+insert into Sucursales values (NEWID(), '88151ADB-6158-42BB-A021-0167235C13A8', 'San Pedro', 'SAN FRANCISCO CULHUACAN, C.P. 04420', 11111111, 'DD9D7707-259F-4F71-B4EC-6C0D623C791D') 
+insert into Sucursales values (NEWID(), '88151ADB-6158-42BB-A021-0167235C13A8', 'Monterrey', 'VERACRUZ CENTRO, C.P. 91700', 22222222, '4C6D0C36-072D-4044-AC7D-AFA203657B61')
+insert into Sucursales values (NEWID(), '88151ADB-6158-42BB-A021-0167235C13A8', 'Apodaca', '5 DE MAYO, APODACA, C.P. 91700', 33333333, 'C36F6BB2-C416-4BDC-B4FD-CE5EE055327C')
+
+select * from Proveedor
+insert into Proveedor values (newid(), 'FAMALAB', 88888888, 'SANTA ANA, SAN FRANCISCO CULHUACAN
+AV. SANTA ANA, SAN FRANCISCO CULHUACAN, C.P. 04420')
+insert into Proveedor values (newid(), 'MEDLAB', 77777777, 'DIAZ MIRON, VERACRUZ CENTRO
+SALVADOR DIAZ MIRON, VERACRUZ CENTRO, C.P. 91700')
+insert into Proveedor values (newid(), 'SergioLAB', 66666666, '5 DE MAYO, VERACRUZ CENTRO
+5 DE MAYO, VERACRUZ CENTRO, C.P. 91700')
+
+select * from empleados
+insert into empleados values (NEWID(), 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', '269A9890-E5D0-4A4B-B1E0-5E0858B23771', 'Alexis', 44444444)
+insert into empleados values (NEWID(), 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', '28A1C1E7-C311-42FC-929F-7573E05D3618', 'Victor', 55555555)
+insert into empleados values (NEWID(), 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', 'E2FF39D1-D343-40E3-886C-98602B9FEB85', 'Adrian' , 66666666)
+
+select * from puesto
+insert into puesto values (NEWID(), 'Contador', 2200.00)
+insert into puesto values (NEWID(), 'Cajera', 1230.00)
+insert into puesto values (NEWID(), 'Intendente', 900.00)
+insert into puesto values (newid(), 'Cajero', 2200.00)
+
+select * from inventario
+insert into Inventario values ('88151ADB-6158-42BB-A021-0167235C13A8', 20, 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', NEWID())
+insert into Inventario values ('C7608B05-678A-45A5-99C8-25DA34FB2E52', 42, 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', NEWID())
+insert into Inventario values ('FE4B3BF4-497D-4314-A39F-3225A1F9D57D', 42, 'FE4F9CB4-9416-4FC2-979D-24CD42CBB706', NEWID())
+
+update producto set precio=25.00 where nombre='Next'
+update producto set precio=300.00 where nombre='Lagricel'
+update inventario set cantidad=25 where ID_Producto='C7608B05-678A-45A5-99C8-25DA34FB2E52'
+update puesto set sueldo=7500.00 where tipo='Gerente'
+update puesto set sueldo=2000.00 where tipo='Intendente'
+
+delete from puesto where tipo='Farmaceutico'
+delete from producto where nombre='tutsipop'
+delete from Producto where nombre='Trident'
+delete from Producto where nombre='Gomilocas'
